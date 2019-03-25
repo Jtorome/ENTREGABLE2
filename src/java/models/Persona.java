@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Persona {
     
-    static List<Persona> PeopleList= new ArrayList<Persona>();
+    //static List<Persona> PeopleList= new ArrayList<Persona>();
     
     private String Email;
     private String Password;
@@ -18,7 +18,7 @@ public class Persona {
         this.setPassword(password);
         this.setName(name);
         this.setCellPhone(cellphone);
-        Persona.PeopleList.add(this);
+        //Persona.PeopleList.add(this);
     }
     
     public void setEmail(String email){this.Email=email;}

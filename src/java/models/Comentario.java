@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Comentario {
     
-    static List<Comentario> CommentsList = new ArrayList<Comentario>();
+    //static List<Comentario> CommentsList = new ArrayList<Comentario>();
     
     private String Description;
     private Persona Person;

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Pasajero extends Persona {
     
-    static List<Pasajero> PassengerList = new ArrayList<Pasajero>();
+    //static List<Pasajero> PassengerList = new ArrayList<Pasajero>();
     
     private float AverageScore=0;
     private List<Servicio> ServiceListPa=new ArrayList<Servicio>();

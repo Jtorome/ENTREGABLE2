@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Conductor extends Persona {
     
-    static List<Conductor> DriverList = new ArrayList<Conductor>();
+    //static List<Conductor> DriverList = new ArrayList<Conductor>();
     
     private int ServicesNumber=0;
     private float AccumulatedRating=0;
@@ -17,14 +17,14 @@ public class Conductor extends Persona {
     
     public Conductor(String email, String password, String name, String cellphone){
         super(email, password, name, cellphone);
-        Conductor.DriverList.add(this);
+        //Conductor.DriverList.add(this);
     }
     
     public Conductor(String email, String password, String name, String cellphone, int servicesnumber, float accumulatedrating){
         super(email, password, name, cellphone);
         this.ServicesNumber=servicesnumber;
         this.AccumulatedRating=accumulatedrating;
-        Conductor.DriverList.add(this);
+        //Conductor.DriverList.add(this);
     }
     
     public void setServicesNumber(){this.ServicesNumber=this.getServiceListDri().size();}
@@ -52,5 +52,12 @@ public class Conductor extends Persona {
     public List<Servicio> getServiceListDri() {return this.ServiceListDri;}
     public List<Servicio> getCurrentService() {return this.CurrentService;}
     public List<Pasajero> getUnqualifiedRider() {return this.UnqualifiedRider;}
-    
+    public Vehiculo getActivo(){
+        for(Vehiculo vehi: this.getVehiclesList()){
+            if(vehi.getActive().equals("Si")){
+                return vehi;
+            }
+        }
+        return null;
+    }
 }
