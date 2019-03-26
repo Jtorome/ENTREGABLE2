@@ -45,7 +45,7 @@
         <script src="js/demo/chart-area-demo.js"></script>
         <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script src="js/sweetalert.min.js" type="text/javascript"/></script>
-    </head>
+</head>
 <body id="page-top">
     <script type="text/javascript">
         if (${empty InfoUsuario}) {
@@ -100,9 +100,3 @@
                     <a class="dropdown-item" href="blank.html">Blank Page</a>
                 </div>
             </li>
-        </ul>
-        <div id="content-wrapper">
-            <div class="container-fluid">
-                
-       
-

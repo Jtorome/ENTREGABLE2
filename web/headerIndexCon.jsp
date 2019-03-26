@@ -84,11 +84,11 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="OpcionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Opciones</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="ProgramarViaje.jsp">Programar viaje</a>
                     <a class="dropdown-item" href="VerViajeActualCon.jsp">Ver viaje acual.</a>
@@ -99,6 +99,4 @@
                     <a class="dropdown-item" href="blank.html">Blank Page</a>
                 </div>
             </li>
-        </ul>
-        <div id="content-wrapper">
-            <div class="container-fluid">
+
