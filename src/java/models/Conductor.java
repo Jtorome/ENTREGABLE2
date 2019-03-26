@@ -52,12 +52,4 @@ public class Conductor extends Persona {
     public List<Servicio> getServiceListDri() {return this.ServiceListDri;}
     public List<Servicio> getCurrentService() {return this.CurrentService;}
     public List<Pasajero> getUnqualifiedRider() {return this.UnqualifiedRider;}
-    public Vehiculo getActivo(){
-        for(Vehiculo vehi: this.getVehiclesList()){
-            if(vehi.getActive().equals("Si")){
-                return vehi;
-            }
-        }
-        return null;
-    }
 }

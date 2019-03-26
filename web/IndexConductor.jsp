@@ -6,22 +6,6 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="headerIndexCon.jsp" %>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="OpcionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Bla</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
-        <h6 class="dropdown-header">Bla servicios:</h6>
-        <a class="dropdown-item" href="ProgramarViaje.jsp">Programar viaje</a>
-        <a class="dropdown-item" href="VerViajeActualCon.jsp">Ver viaje acual.</a>
-        <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-        <div class="dropdown-divider"></div>
-        <h6 class="dropdown-header">Other Pages:</h6>
-        <a class="dropdown-item" href="404.html">404 Page</a>
-        <a class="dropdown-item" href="blank.html">Blank Page</a>
-    </div>
-</li>
 </ul>
 <div id="content-wrapper">
     <div class="container-fluid">

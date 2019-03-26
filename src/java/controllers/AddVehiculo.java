@@ -70,9 +70,6 @@ public class AddVehiculo extends HttpServlet {
             if (request.getParameter("txtModel").equals("")) {
                 stMensaje += "Ingrese el modelo, ";
             }
-            if (!request.getParameter("txtActive").equals("Si") && !request.getParameter("txtActive").equals("No")) {
-                stMensaje += "Ingrese Si o No, ";
-            }
             if (!stMensaje.equals("")) {
                 throw new Exception(stMensaje.substring(0, stMensaje.length() - 2) + ".");
             }
@@ -91,14 +88,13 @@ public class AddVehiculo extends HttpServlet {
                 seats = 2;
             }
             String model = request.getParameter("txtModel");
-            String active = request.getParameter("txtActive");
             Conductor driver = (Conductor) session.getAttribute("InfoUsuario");
             for (Vehiculo rider : VehiclesList) {
                 if (rider.getLicensePlate().equals(LicensePlate)) {
                     throw new Exception("Placa existente por favor registre una que no exista.");
                 }
             }
-            Vehiculo p = new Vehiculo(LicensePlate, color, type, model, seats, driver, active);
+            Vehiculo p = new Vehiculo(LicensePlate, color, type, model, seats, driver);
             VehiclesList.add(p);
 
             session.setAttribute("VehiclesList", VehiclesList);

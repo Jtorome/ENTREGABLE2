@@ -123,20 +123,15 @@ public class ProgramarViaje extends HttpServlet {
             if (request.getParameter("txtHours").equals("") || request.getParameter("txtMinutes").equals("") || request.getParameter("txtOutPutCore").equals("") || request.getParameter("txtArrivalNucleus").equals("") || request.getParameter("txtStartPlace").equals("") || request.getParameter("txtEndPlace").equals("") || request.getParameter("txtAvailableSeats").equals("") || request.getParameter("txtDateSer").equals("")) {
                 throw new Exception("Llene todos los campos por favor.");
             }
-            int NUMBERVEHICLES = ((Conductor) session.getAttribute("InfoUsuario")).getVehiclesList().size();
-            int CONT = 0;
+            Vehiculo vehicle=null;
             for (Vehiculo vehi : ((Conductor) session.getAttribute("InfoUsuario")).getVehiclesList()) {
-                if (vehi.getActive().equals("Si")) {
-                    int seats = vehi.getSeats() - 1;
-                    if (Integer.parseInt(request.getParameter("txtAvailableSeats")) > seats) {
-                        throw new Exception("Cantidad de asientos sobrepasa el cupo.");
-                    }
-                } else {
-                    CONT++;
+                if (vehi.getLicensePlate().equals(request.getParameter("txtVehi"))) {
+                    vehicle=vehi;
+                    break;
                 }
-                if (CONT == NUMBERVEHICLES) {
-                    throw new Exception("Active un vehiculo por favor.");
-                }
+            }
+            if(vehicle.getSeats()>=Integer.parseInt(request.getParameter("txtAvailableSeats")) || Integer.parseInt(request.getParameter("txtAvailableSeats"))<0){
+                throw new Exception("Numero de asientos invalido.");
             }
             if (request.getParameter("txtDateSer").equals("Hoy")) {
                 LocalDateTime today = LocalDateTime.now();
@@ -169,7 +164,6 @@ public class ProgramarViaje extends HttpServlet {
             String endplace = request.getParameter("txtEndPlace");
             int availableseats = Integer.parseInt(request.getParameter("txtAvailableSeats"));
             Conductor driver = (Conductor) session.getAttribute("InfoUsuario");
-            Vehiculo vehicle = driver.getActivo();
             LocalDate dateser;
             if (request.getParameter("txtDateSer").equals("Hoy")) {
                 dateser = LocalDate.now();
