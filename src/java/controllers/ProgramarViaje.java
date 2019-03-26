@@ -119,16 +119,23 @@ public class ProgramarViaje extends HttpServlet {
             if (((Conductor) session.getAttribute("InfoUsuario")).getVehiclesList().isEmpty()) {
                 throw new ArithmeticException("Registre un vehiculo para programar un viaje.");
             }
+
             if (request.getParameter("txtHours").equals("") || request.getParameter("txtMinutes").equals("") || request.getParameter("txtOutPutCore").equals("") || request.getParameter("txtArrivalNucleus").equals("") || request.getParameter("txtStartPlace").equals("") || request.getParameter("txtEndPlace").equals("") || request.getParameter("txtAvailableSeats").equals("") || request.getParameter("txtDateSer").equals("")) {
                 throw new Exception("Llene todos los campos por favor.");
             }
-            //int seats=0;
+            int NUMBERVEHICLES = ((Conductor) session.getAttribute("InfoUsuario")).getVehiclesList().size();
+            int CONT = 0;
             for (Vehiculo vehi : ((Conductor) session.getAttribute("InfoUsuario")).getVehiclesList()) {
                 if (vehi.getActive().equals("Si")) {
                     int seats = vehi.getSeats() - 1;
                     if (Integer.parseInt(request.getParameter("txtAvailableSeats")) > seats) {
                         throw new Exception("Cantidad de asientos sobrepasa el cupo.");
                     }
+                } else {
+                    CONT++;
+                }
+                if (CONT == NUMBERVEHICLES) {
+                    throw new Exception("Active un vehiculo por favor.");
                 }
             }
             if (request.getParameter("txtDateSer").equals("Hoy")) {

@@ -91,7 +91,7 @@
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="ProgramarViaje.jsp">Programar viaje</a>
-                    <a class="dropdown-item" href="Registro.jsp">Register</a>
+                    <a class="dropdown-item" href="VerViajeActualCon.jsp">Ver viaje acual.</a>
                     <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Other Pages:</h6>
