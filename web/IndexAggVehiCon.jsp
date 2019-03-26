@@ -37,13 +37,6 @@
                         <label for="lblModel">Modelo del vehiculo</label>
                         <input type="text" name="txtModel" class="form-control" placeholder="Ingrese el modelo." required="required">
                     </div>
-                    <div class="col-md-3">
-                        <label for="lblActive">¿lo desea activar?</label>
-                        <select type="email" name="txtActive" class="form-control" required="required" autofocus>
-                            <option value="Si">Si</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
                 </div>
             </div>
             <input name="btnRegistrarme" type="submit" class="btn btn-primary btn-block" value="Registrar vehiculo"/>
