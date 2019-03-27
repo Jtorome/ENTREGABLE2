@@ -130,7 +130,7 @@ public class ProgramarViaje extends HttpServlet {
                     break;
                 }
             }
-            if(vehicle.getSeats()>=Integer.parseInt(request.getParameter("txtAvailableSeats")) || Integer.parseInt(request.getParameter("txtAvailableSeats"))<0){
+            if(vehicle.getSeats()<=Integer.parseInt(request.getParameter("txtAvailableSeats")) || Integer.parseInt(request.getParameter("txtAvailableSeats"))<0){
                 throw new Exception("Numero de asientos invalido.");
             }
             if (request.getParameter("txtDateSer").equals("Hoy")) {

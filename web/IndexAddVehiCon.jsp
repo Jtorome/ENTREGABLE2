@@ -11,7 +11,7 @@
 </ul>
 <div id="content-wrapper">
     <div class="container-fluid">
-        <form action="IndexAggVehiCon" method="POST">
+        <form action="AddVehiculo" method="POST">
             <div class="form-group">
                 <div class="form-row">
                     <div class="col-md-6">

@@ -92,10 +92,10 @@
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="ProgramarViaje.jsp">Programar viaje</a>
                     <a class="dropdown-item" href="VerViajeActualCon.jsp">Ver viaje acual.</a>
-                    <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
+                    <a class="dropdown-item" href="VerHistorialCon.jsp">Ver mi historial.</a>
                     <div class="dropdown-divider"></div>
-                    <h6 class="dropdown-header">Other Pages:</h6>
-                    <a class="dropdown-item" href="404.html">404 Page</a>
+                    <h6 class="dropdown-header">Otras opciones:</h6>
+                    <a class="dropdown-item" href="IndexVerVehiculosCon.jsp">Mis vehiculos.</a>
                     <a class="dropdown-item" href="blank.html">Blank Page</a>
                 </div>
             </li>

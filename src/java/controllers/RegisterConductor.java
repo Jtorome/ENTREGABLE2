@@ -97,7 +97,7 @@ public class RegisterConductor extends HttpServlet {
 
             session.setAttribute("InfoUsuario", p);
             session.setAttribute("DriversList", DriversList);
-            RequestDispatcher view = request.getRequestDispatcher("AddVehiculo.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("IndexAddVehiCon.jsp");
             view.forward(request, response);
         } catch (Exception exc) {
             request.setAttribute("stError", exc.getMessage());

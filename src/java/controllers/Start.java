@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import models.Comentario;
 import models.Conductor;
 import models.Pasajero;
 import models.Vehiculo;
@@ -42,11 +43,13 @@ public class Start extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
+        List<Comentario> CommentsList = new ArrayList<Comentario>();
         List<Conductor> DriversList = new ArrayList<Conductor>();
         List<Pasajero> RidersList = new ArrayList<Pasajero>();
         List<Vehiculo> VehiclesList = new ArrayList<Vehiculo>();
         List<Servicio> ServicesList = new ArrayList<Servicio>();
         List<Servicio> AvailableService = new ArrayList<Servicio>();
+        session.setAttribute("CommentsList", CommentsList);
         session.setAttribute("DriversList", DriversList);
         session.setAttribute("RidersList", RidersList);
         session.setAttribute("VehiclesList", VehiclesList);

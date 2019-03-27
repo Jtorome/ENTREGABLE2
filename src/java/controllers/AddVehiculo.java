@@ -25,24 +25,6 @@ import models.Conductor;
  */
 @WebServlet(name = "AddVehiculo", urlPatterns = {"/AddVehiculo"})
 public class AddVehiculo extends HttpServlet {
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        RequestDispatcher view = request.getRequestDispatcher("AddVehiculo.jsp");
-        view.forward(request, response);
-    }
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -98,11 +80,11 @@ public class AddVehiculo extends HttpServlet {
             VehiclesList.add(p);
 
             session.setAttribute("VehiclesList", VehiclesList);
-            RequestDispatcher view = request.getRequestDispatcher("LoginConductor.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("IndexConductor.jsp");
             view.forward(request, response);
         } catch (Exception exc) {
             request.setAttribute("stError", exc.getMessage());
-            request.getRequestDispatcher("AddVehiculo.jsp").forward(request, response);
+            request.getRequestDispatcher("IndexAddVehiCon.jsp").forward(request, response);
         }
     }
 }

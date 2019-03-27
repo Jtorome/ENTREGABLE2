@@ -21,7 +21,7 @@ public class Servicio {
     private Vehiculo Vehicle;
     private LocalDate DateSer;
     private float AverageScoreSer=0;
-    private List<Pasajero> RidersList=new ArrayList<Pasajero>();
+    private List<Pasajero> RidersList = new ArrayList<Pasajero>();
     private List<Calificacion> QualificationsList=new ArrayList<Calificacion>();
     private HashMap <Pasajero, List> RiderxSeat=new HashMap <Pasajero, List>();
     

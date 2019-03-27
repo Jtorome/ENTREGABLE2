@@ -6,17 +6,27 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="headerIndexCon.jsp" %>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="OpcionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Menu vehiculos.</span>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
+        <h6 class="dropdown-header">Sobre vehiculos:</h6>
+        <a class="dropdown-item" href="IndexAddVehiCon.jsp">Registrar vehiculo.</a>
+        <div class="dropdown-divider"></div>
+        <h6 class="dropdown-header">Other Pages:</h6>
+        <a class="dropdown-item" href="404.html">404 Page</a>
+        <a class="dropdown-item" href="blank.html">Blank Page</a>
+    </div>
+</li>
 </ul>
 <div id="content-wrapper">
     <div class="container-fluid">
-        <form action="IndexConductor" method="GET"><input type="submit" hidden=""></form>
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fas fa-table"></i>
-                Servicios disponibles
-                <form action="IndexConductor" method="GET">
-                    <input type="submit" class="fas fa-table" value="Actualizar">
-                </form>
+                Mis vehiculos
             </div>
             <div class="card-body">
                 <div class="table-responsive">
