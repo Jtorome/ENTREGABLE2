@@ -8,7 +8,6 @@
 <%@ include file="headerIndexPas.jsp" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 </ul>
 <div id="content-wrapper">
@@ -29,7 +28,7 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Tomar servicio.</th>
+                                        <th>Tomar y numero de asientos.</th>
                                         <th>Hora encuentro</th>
                                         <th>Nucleo salida</th>
                                         <th>Nucleo llegada</th>

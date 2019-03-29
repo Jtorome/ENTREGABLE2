@@ -23,7 +23,7 @@ public class Servicio {
     private float AverageScoreSer=0;
     private List<Pasajero> RidersList = new ArrayList<Pasajero>();
     private List<Calificacion> QualificationsList=new ArrayList<Calificacion>();
-    private HashMap <Pasajero, List> RiderxSeat=new HashMap <Pasajero, List>();
+    private HashMap <Pasajero, Integer> RiderxSeat=new HashMap <Pasajero, Integer>();
     
     public Servicio(String meetingtime, String outputcore, String arrivalnucleus, String startplace, String endplace, int availableseats, Conductor driver, Vehiculo vehicle, LocalDate dateser){
         this.setMeetingTime(meetingtime);
@@ -57,14 +57,15 @@ public class Servicio {
         this.RidersList.add(rider);
         rider.setServiceListPa(this);
         rider.setCurrentTrip(this);
+        this.setRiderxSeat(rider, seat);
         this.AvailableSeats=this.AvailableSeats-seat;
     }
     public void setQualificationsList(Calificacion Qualification){
         this.QualificationsList.add(Qualification);
         this.setAverageScoreSer();
     }
-    public void setRiderxSeat(Pasajero pasajero, List reason){
-        RiderxSeat.put(pasajero, reason);
+    public void setRiderxSeat(Pasajero pasajero, int seat){
+        RiderxSeat.put(pasajero, seat);
     }
     public void setAverageScoreSer(){
         List<Calificacion> Qualifications=this.getQualificationsList();
@@ -103,5 +104,12 @@ public class Servicio {
             }
         }
         return null;
+    }
+    public void DeleteRider(Pasajero rider){
+        this.RidersList.remove(rider);
+        rider.getServiceListPa().remove(this);
+        rider.getCurrentTrip().remove(this);
+        int seat=(Integer) this.getRiderxSeat().get(rider);
+        this.AvailableSeats=this.AvailableSeats+seat;
     }
 }

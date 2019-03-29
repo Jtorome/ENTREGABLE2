@@ -42,13 +42,6 @@ public class TomarServicioPas extends HttpServlet {
             String meetingtime=request.getParameter("txtMeetingTime");
             Conductor driver =Conductor.BuscadorDeConductor(request.getParameter("txtEmail"), DriversList);
             String[] date =request.getParameter("txtDateSer").split("-");
-            //for(Servicio servicio: AvailableService){
-            //    if(!request.getParameter("txtMeetingTime,"+servicio).isEmpty() && !request.getParameter("txtEmail,"+servicio).isEmpty() && !request.getParameter("txtDateSer,"+servicio).isEmpty()){
-            //       meetingtime=request.getParameter("txtMeetingTime,"+servicio);
-            //        driver = Conductor.BuscadorDeConductor(request.getParameter("txtEmail,"+servicio), DriversList);
-            //        date = request.getParameter("txtDateSer,"+servicio).split("-");
-            //    }
-            //}
             LocalDate dateser = LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
             Servicio service = Servicio.BuscadorDeServicio(meetingtime, driver, dateser, AvailableService);
             if(service.getAvailableSeats()-Integer.parseInt(request.getParameter("txtSeats"))<0){

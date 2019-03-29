@@ -15,7 +15,8 @@
             <div class="card-header">
                 <i class="fas fa-table"></i>
                 Mi viaje actual es:
-                <form action="EliminarServicioCon" method="POST">
+                <form action="EliminarServicio" method="POST">
+                    <input type="text" name="Controller" hidden="" class="fas fa-table" value="Conductor">
                     <input type="submit" class="fas fa-table" value="Eliminar">
                 </form>
             </div>
