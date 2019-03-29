@@ -79,7 +79,8 @@ public class LoginPasajero extends HttpServlet {
             for (Pasajero rider : RidersList) {
                 if (rider.getEmail().equals(email) && rider.getPassword().equals(password)) {
                     session.setAttribute("InfoUsuario", rider);
-                    request.getRequestDispatcher("IndexPasajero.jsp").forward(request, response);
+                    response.sendRedirect("/Entregable2/IndexPasajero");
+                    //request.getRequestDispatcher("IndexPasajero").forward(request, response);
                     break;
                 } else {
                     session.setAttribute("InfoUsuario", null);

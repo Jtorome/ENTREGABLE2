@@ -52,4 +52,12 @@ public class Conductor extends Persona {
     public List<Servicio> getServiceListDri() {return this.ServiceListDri;}
     public List<Servicio> getCurrentService() {return this.CurrentService;}
     public List<Pasajero> getUnqualifiedRider() {return this.UnqualifiedRider;}
+    public static Conductor BuscadorDeConductor(String email, List<Conductor> DriversList){
+        for(Conductor driver: DriversList){
+            if(email.equals(driver.getEmail())){
+                return driver;
+            }
+        }
+        return null;
+    }
 }

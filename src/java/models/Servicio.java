@@ -96,4 +96,12 @@ public class Servicio {
     public List<Pasajero> getRidersList() {return RidersList;}
     public List<Calificacion> getQualificationsList() {return QualificationsList;}
     public HashMap getRiderxSeat(){return this.RiderxSeat;}
+    public static Servicio BuscadorDeServicio(String meetingtime, Conductor driver, LocalDate dateser, List<Servicio> availableservice){
+        for(Servicio service:availableservice){
+            if(service.getMeetingTime().equals(meetingtime) && service.getDriver().equals(driver) && service.getDateSer().equals(dateser)){
+                return service;
+            }
+        }
+        return null;
+    }
 }

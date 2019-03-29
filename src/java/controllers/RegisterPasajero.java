@@ -92,8 +92,8 @@ public class RegisterPasajero extends HttpServlet {
             RidersList.add(p);
 
             session.setAttribute("RidersList", RidersList);
-            RequestDispatcher view = request.getRequestDispatcher("LoginPasajero.jsp");
-            view.forward(request, response);
+            response.sendRedirect("/Entregable2/LoginPasajero");
+            //request.getRequestDispatcher("LoginPasajero.jsp").forward(request, response);
         } catch (Exception exc) {
             request.setAttribute("stError", exc.getMessage());
             request.getRequestDispatcher("RegisterPasajero.jsp").forward(request, response);

@@ -26,6 +26,7 @@ public class LogOut extends HttpServlet {
         
         HttpSession session = request.getSession();
         session.setAttribute("InfoUsuario", null);
-        request.getRequestDispatcher("Start.jsp").forward(request, response);
+        response.sendRedirect("/Entregable2/Start");
+        //request.getRequestDispatcher("Start.jsp").forward(request, response);
     }
 }

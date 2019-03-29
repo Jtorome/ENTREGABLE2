@@ -49,10 +49,13 @@
 <body id="page-top">
     <script type="text/javascript">
         if (${empty InfoUsuario}) {
-            window.location = "Login.jsp";
+            window.location = "/Entregable2/Login";
         }
         if (${!empty stError}) {
             swal("Mensaje", "${stError}", "error");
+        }
+        if (${!empty stExito}){
+            swal("Mensaje", "${stExito}", "success");
         }
     </script>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">

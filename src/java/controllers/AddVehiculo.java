@@ -25,6 +25,14 @@ import models.Conductor;
  */
 @WebServlet(name = "AddVehiculo", urlPatterns = {"/AddVehiculo"})
 public class AddVehiculo extends HttpServlet {
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        RequestDispatcher view = request.getRequestDispatcher("IndexAddVehiCon.jsp");
+        view.forward(request, response);
+    }
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -80,8 +88,8 @@ public class AddVehiculo extends HttpServlet {
             VehiclesList.add(p);
 
             session.setAttribute("VehiclesList", VehiclesList);
-            RequestDispatcher view = request.getRequestDispatcher("IndexConductor.jsp");
-            view.forward(request, response);
+            response.sendRedirect("/Entregable2/IndexConductor");
+            //request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
         } catch (Exception exc) {
             request.setAttribute("stError", exc.getMessage());
             request.getRequestDispatcher("IndexAddVehiCon.jsp").forward(request, response);

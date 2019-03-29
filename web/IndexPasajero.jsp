@@ -24,57 +24,60 @@
                             <input type="submit" class="fas fa-table" value="Actualizar">
                         </form>
                     </div>
-                    <form action="TomarServicio" method="POST">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Tomar servicio.</th>
+                                        <th>Hora encuentro</th>
+                                        <th>Nucleo salida</th>
+                                        <th>Nucleo llegada</th>
+                                        <th>Lugar salida</th>
+                                        <th>Lugar llegada</th>
+                                        <th>Asientos disponibles</th>
+                                        <th>Conductor</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Tomar y numero de asientos.</th>
+                                        <th>Hora encuentro</th>
+                                        <th>Nucleo salida</th>
+                                        <th>Nucleo llegada</th>
+                                        <th>Lugar salida</th>
+                                        <th>Lugar llegada</th>
+                                        <th>Asientos disponibles</th>
+                                        <th>Conductor</th>
+                                        <th>Fecha</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <c:forEach items="${AvailableService}" var="service">
                                         <tr>
-                                            <th>Tomar servicio.</th>
-                                            <th>Hora encuentro</th>
-                                            <th>Nucleo salida</th>
-                                            <th>Nucleo llegada</th>
-                                            <th>Lugar salida</th>
-                                            <th>Lugar llegada</th>
-                                            <th>Asientos disponibles</th>
-                                            <th>Conductor</th>
-                                            <th>Fecha</th>
+                                            <td><form action="TomarServicioPas" method="POST"><select type="number" name="txtSeats" class="form-control" required="required" autofocus>
+                                                        <option value=1>1</option>
+                                                        <option value=2>2</option>
+                                                    </select>
+                                                    <input type="txt" name="txtMeetingTime" hidden="" value="${service.getMeetingTime()}">
+                                                    <input type="txt" name="txtEmail" hidden="" value="${service.getDriver().getEmail()}">
+                                                    <input type="txt" name="txtDateSer" hidden="" value="${service.getDateSer()}">
+                                                    <input type="submit" class="fas fa-table" value="Tomar"></form></td>
+                                            <td>${service.getMeetingTime()}</td>
+                                            <td>${service.getOutputCore()}</td>
+                                            <td>${service.getArrivalNucleus()}</td>
+                                            <td>${service.getStartPlace()}</td>
+                                            <td>${service.getEndPlace()}</td>
+                                            <td>${service.getAvailableSeats()}</td>
+                                            <td>${service.getDriver().getName()}</td>
+                                            <td>${service.getDateSer()}</td>
                                         </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Tomar servicio.</th>
-                                            <th>Hora encuentro</th>
-                                            <th>Nucleo salida</th>
-                                            <th>Nucleo llegada</th>
-                                            <th>Lugar salida</th>
-                                            <th>Lugar llegada</th>
-                                            <th>Asientos disponibles</th>
-                                            <th>Conductor</th>
-                                            <th>Fecha</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <c:forEach items="${AvailableService}" var="service">
-                                            <tr>
-                                                <td>
-                                                    <input type="text" name="txtModel" hidden="" value="${service}" required="required">
-                                                    <input type="submit" class="fas fa-table" value="Tomar"></td>
-                                                <td>${service.getMeetingTime()}</td>
-                                                <td>${service.getOutputCore()}</td>
-                                                <td>${service.getArrivalNucleus()}</td>
-                                                <td>${service.getStartPlace()}</td>
-                                                <td>${service.getEndPlace()}</td>
-                                                <td>${service.getAvailableSeats()}</td>
-                                                <td>${service.getDriver().getName()}</td>
-                                                <td>${service.getDateSer()}</td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </c:forEach>
+                                </tbody>
+                            </table>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
 

@@ -79,7 +79,8 @@ public class LoginConductor extends HttpServlet {
             for (Conductor driver : DriversList) {
                 if (driver.getEmail().equals(email) && driver.getPassword().equals(password)) {
                     session.setAttribute("InfoUsuario", driver);
-                    request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
+                    response.sendRedirect("/Entregable2/IndexConductor");
+                    //request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
                     break;
                 } else {
                     session.setAttribute("InfoUsuario", null);

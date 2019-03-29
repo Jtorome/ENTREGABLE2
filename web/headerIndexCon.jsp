@@ -90,9 +90,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
                     <h6 class="dropdown-header">Sobre servicios:</h6>
-                    <a class="dropdown-item" href="ProgramarViaje.jsp">Programar viaje</a>
-                    <a class="dropdown-item" href="VerViajeActualCon.jsp">Ver viaje acual.</a>
-                    <a class="dropdown-item" href="VerHistorialCon.jsp">Ver mi historial.</a>
+                    <a class="dropdown-item" href="/Entregable2/ProgramarViaje">Programar viaje</a>
+                    <a class="dropdown-item" href="/Entregable2/VerViajeActualCon">Ver viaje acual.</a>
+                    <a class="dropdown-item" href="/Entregable2/VerHistorialCon">Ver mi historial.</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Otras opciones:</h6>
                     <a class="dropdown-item" href="IndexVerVehiculosCon.jsp">Mis vehiculos.</a>

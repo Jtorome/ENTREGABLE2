@@ -97,8 +97,7 @@ public class ProgramarViaje extends HttpServlet {
             throws ServletException, IOException {
         UploadAvailableService(request, response);
 
-        RequestDispatcher view = request.getRequestDispatcher("ProgramarViaje.jsp");
-        view.forward(request, response);
+        request.getRequestDispatcher("ProgramarViaje.jsp").forward(request, response);
     }
 
     /**
@@ -176,11 +175,12 @@ public class ProgramarViaje extends HttpServlet {
 
             session.setAttribute("ServicesList", ServicesList);
             session.setAttribute("AvailableService", AvailableService);
-            RequestDispatcher view = request.getRequestDispatcher("IndexConductor.jsp");
-            view.forward(request, response);
+            response.sendRedirect("/Entregable2/IndexConductor");
+            //request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
         } catch (ArithmeticException exce) {
             request.setAttribute("stError", exce.getMessage());
-            request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
+            response.sendRedirect("/Entregable2/IndexConductor");
+            //request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
         } catch (Exception exce) {
             request.setAttribute("stError", exce.getMessage());
             request.getRequestDispatcher("ProgramarViaje.jsp").forward(request, response);

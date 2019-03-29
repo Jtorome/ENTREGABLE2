@@ -49,12 +49,24 @@ public class Start extends HttpServlet {
         List<Vehiculo> VehiclesList = new ArrayList<Vehiculo>();
         List<Servicio> ServicesList = new ArrayList<Servicio>();
         List<Servicio> AvailableService = new ArrayList<Servicio>();
-        session.setAttribute("CommentsList", CommentsList);
-        session.setAttribute("DriversList", DriversList);
-        session.setAttribute("RidersList", RidersList);
-        session.setAttribute("VehiclesList", VehiclesList);
-        session.setAttribute("ServicesList", ServicesList);
-        session.setAttribute("AvailableService", AvailableService);
+        if (null == session.getAttribute("CommentsList")) {
+                session.setAttribute("CommentsList", CommentsList);
+            }
+        if (null == session.getAttribute("DriversList")) {
+                session.setAttribute("DriversList", DriversList);
+            }
+        if (null == session.getAttribute("RidersList")) {
+                session.setAttribute("RidersList", RidersList);
+            }
+        if (null == session.getAttribute("VehiclesList")) {
+                session.setAttribute("VehiclesList", VehiclesList);
+            }
+        if (null == session.getAttribute("ServicesList")) {
+                session.setAttribute("ServicesList", ServicesList);
+            }
+        if (null == session.getAttribute("AvailableService")) {
+                session.setAttribute("AvailableService", AvailableService);
+            }
         RequestDispatcher view = request.getRequestDispatcher("Start.jsp");
         view.forward(request, response);
     }

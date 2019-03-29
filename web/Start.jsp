@@ -37,7 +37,7 @@
                     <div class="text-center">
                         <a class="btn btn-primary btn-block" href="Login.jsp">Iniciar sesion</a>
                         <a class="btn btn-primary btn-block" href="Register.jsp">Registrarme</a>
-                        <a class="btn btn-primary btn-block" href="#">Pendiente</a>
+                        <a class="btn btn-primary btn-block" href="/Entregable2/CrearDatosFicticios">Crear datos ficticios</a>
                     </div>
                 </div>
             </div>
