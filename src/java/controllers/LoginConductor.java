@@ -71,7 +71,7 @@ public class LoginConductor extends HttpServlet {
             if (null != session.getAttribute("DriversList")) {
                 DriversList = (List<Conductor>) session.getAttribute("DriversList");
             }
-            String email = request.getParameter("txtEmail");
+            String email = request.getParameter("txtEmail").toLowerCase();
             String password = request.getParameter("txtPassword");
             if (DriversList.isEmpty()) {
                 throw new Exception("Correo y/o contraseña invalido.");

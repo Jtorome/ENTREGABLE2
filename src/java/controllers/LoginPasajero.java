@@ -71,7 +71,7 @@ public class LoginPasajero extends HttpServlet {
             if (null != session.getAttribute("RidersList")) {
                 RidersList = (List<Pasajero>) session.getAttribute("RidersList");
             }
-            String email = request.getParameter("txtEmail");
+            String email = request.getParameter("txtEmail").toLowerCase();
             String password = request.getParameter("txtPassword");
             if (RidersList.isEmpty()) {
                 throw new Exception("Correo y/o contraseña invalido.");

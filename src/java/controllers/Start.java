@@ -67,7 +67,6 @@ public class Start extends HttpServlet {
         if (null == session.getAttribute("AvailableService")) {
                 session.setAttribute("AvailableService", AvailableService);
             }
-        RequestDispatcher view = request.getRequestDispatcher("Start.jsp");
-        view.forward(request, response);
+        request.getRequestDispatcher("Start.jsp").forward(request, response);
     }
 }

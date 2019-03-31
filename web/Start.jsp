@@ -27,20 +27,25 @@
 
         <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script src="js/sweetalert.min.js" type="text/javascript"/></script>
-    </head>
-    <body class="bg-dark">
-
-        <div class="container">
-            <div class="card card-login mx-auto mt-5">
-                <div class="card-header">Login</div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <a class="btn btn-primary btn-block" href="Login.jsp">Iniciar sesion</a>
-                        <a class="btn btn-primary btn-block" href="Register.jsp">Registrarme</a>
-                        <a class="btn btn-primary btn-block" href="/Entregable2/CrearDatosFicticios">Crear datos ficticios</a>
-                    </div>
+</head>
+<body class="bg-dark">
+    <script type="text/javascript">
+        if (${!empty stError}) {
+            swal("Mensaje", "${stError}", "error");
+        }
+    </script>
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <div class="text-center">
+                    <a class="btn btn-primary btn-block" href="/Entregable2/Login">Iniciar sesion</a>
+                    <a class="btn btn-primary btn-block" href="/Entregable2/Register">Registrarme</a>
+                    <a class="btn btn-primary btn-block" href="/Entregable2/CrearDatosFicticios">Crear datos ficticios</a>
+                    <a class="btn btn-primary btn-block" href="/Entregable2/CrearDatosTxt">Crear datos desde txt</a>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

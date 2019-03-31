@@ -58,8 +58,8 @@
                     <input name="btnAceptar" type="submit" class="btn btn-primary btn-block" value="Iniciar sesion como conductor"/>
                 </form>
                 <div class="text-center">
-                    <a class="d-block small mt-3" href="Register.jsp">Registrarme</a>
-                    <a class="d-block small mt-3" href="Login.jsp">Atras.</a>
+                    <a class="d-block small mt-3" href="/Entregable2/Register">Registrarme</a>
+                    <a class="d-block small mt-3" href="/Entregable2/Login">Atras.</a>
                 </div>
             </div>
         </div>

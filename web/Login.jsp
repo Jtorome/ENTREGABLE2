@@ -27,19 +27,24 @@
 
         <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script src="js/sweetalert.min.js" type="text/javascript"/></script>
-    </head>
-    <body class="bg-dark">
-        <div class="container">
-            <div class="card card-login mx-auto mt-5">
-                <div class="card-header">Login</div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <a class="btn btn-primary btn-block" href="LoginPasajero">Iniciar como pasajero</a>
-                        <a class="btn btn-primary btn-block" href="LoginConductor">Iniciar como conductor</a>
-                        <a class="btn btn-primary btn-block" href="Start">Atras</a>
-                    </div>
+</head>
+<body class="bg-dark">
+    <script type="text/javascript">
+            if (${!empty stError}) {
+                swal("Mensaje", "${stError}", "error");
+            }
+    </script>
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <div class="text-center">
+                    <a class="btn btn-primary btn-block" href="LoginPasajero">Iniciar como pasajero</a>
+                    <a class="btn btn-primary btn-block" href="LoginConductor">Iniciar como conductor</a>
+                    <a class="btn btn-primary btn-block" href="Start">Atras</a>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

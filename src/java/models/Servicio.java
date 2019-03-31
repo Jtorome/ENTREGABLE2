@@ -106,7 +106,6 @@ public class Servicio {
         return null;
     }
     public void DeleteRider(Pasajero rider){
-        this.RidersList.remove(rider);
         rider.getServiceListPa().remove(this);
         rider.getCurrentTrip().remove(this);
         int seat=(Integer) this.getRiderxSeat().get(rider);

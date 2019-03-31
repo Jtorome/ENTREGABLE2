@@ -33,20 +33,10 @@
                                 <th>Asientos disponibles</th>
                                 <th>Conductor</th>
                                 <th>Fecha</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Hora encuentro</th>
-                                <th>Nucleo salida</th>
-                                <th>Nucleo llegada</th>
-                                <th>Lugar salida</th>
-                                <th>Lugar llegada</th>
-                                <th>Asientos disponibles</th>
-                                <th>Conductor</th>
-                                <th>Fecha</th>
-                                <th></th>
                             </tr>
                         </tfoot>
                         <tbody>
