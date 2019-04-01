@@ -44,12 +44,16 @@ public class ProgramarViaje extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         List<Servicio> AvailableService = new ArrayList<Servicio>();
-        AvailableService = (List<Servicio>) session.getAttribute("AvailableService");
+        List<Servicio> AvailableServiceCopi = new ArrayList<Servicio>();
+        for(Servicio servi: (List<Servicio>) session.getAttribute("AvailableService")){
+            AvailableService.add(servi);
+            AvailableServiceCopi.add(servi);
+        }
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("HH:mm");
         String nowformat = now.format(format);
         LocalDate today = LocalDate.now();
-        for (Servicio ser : AvailableService) {
+        for (Servicio ser : AvailableServiceCopi) {
             LocalDate dateSer = ser.getDateSer();
             if (dateSer.isBefore(today)) {
                 AvailableService.remove(ser);
@@ -81,6 +85,7 @@ public class ProgramarViaje extends HttpServlet {
                 }
             }
         }
+        session.setAttribute("AvailableService", AvailableService);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

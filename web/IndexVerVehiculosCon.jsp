@@ -33,6 +33,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>Eliminar</th>
                                 <th>Placa</th>
                                 <th>Color</th>
                                 <th>Tipo de vehiculo</th>
@@ -41,6 +42,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>Eliminar</th>
                                 <th>Placa</th>
                                 <th>Color</th>
                                 <th>Tipo de vehiculo</th>
@@ -50,6 +52,9 @@
                         <tbody>
                             <c:forEach items="${InfoUsuario.getVehiclesList()}" var="vehi">
                                 <tr>
+                                    <td><form action="EliminarVehiculoCon" method="POST">
+                                            <input type="txt" name="txtLicensePlate" hidden="" value="${vehi.getLicensePlate()}">
+                                            <input type="submit" class="fas fa-table" value="Eliminar"></form></td>
                                     <td>${vehi.getLicensePlate()}</td>
                                     <td>${vehi.getColor()}</td>
                                     <td>${vehi.getVehicleType()}</td>

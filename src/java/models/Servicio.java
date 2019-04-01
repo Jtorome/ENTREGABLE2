@@ -35,8 +35,6 @@ public class Servicio {
         this.setDriver(driver);
         this.setVehicle(vehicle);
         this.setDateSer(dateser);
-        //Servicio.ServiceList.add(this);
-        //Servicio.AvailableService.add(this);
     }
 
     public void setMeetingTime(String meetingtime) {this.MeetingTime = meetingtime;}

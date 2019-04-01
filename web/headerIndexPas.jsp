@@ -60,11 +60,11 @@
     </script>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1" href="IndexPasajero.jsp">S.T.A.I.N</a>
+        <a class="navbar-brand mr-1" href="/Entregable2/IndexPasajero">S.T.A.I.N</a>
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button>
-        <a class="navbar-brand mr-1" href="IndexPasajero.jsp">PASAJERO</a>
+        <a class="navbar-brand mr-1" href="/Entregable2/IndexPasajero">PASAJERO</a>
         <i class="fas fa-2x fa-male "></i>
         <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <li class="nav-item dropdown no-arrow">
@@ -96,10 +96,8 @@
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="/Entregable2/VerViajeActualPas">Informacion de mi viaje.</a>
                     <a class="dropdown-item" href="Registro.jsp">Agregar Viaje</a>
-                    <a class="dropdown-item" href="forgot-password.html">Ver Perfil</a>
                     <div class="dropdown-divider"></div>
-                    <h6 class="dropdown-header">Other Pages:</h6>
-                    <a class="dropdown-item" href="404.html">404 Page</a>
-                    <a class="dropdown-item" href="blank.html">Blank Page</a>
+                    <h6 class="dropdown-header">Otras paginas</h6>
+                    <a class="dropdown-item" href="/Entregable2/CalificarServicioPas">Calificar (${InfoUsuario.getUnqualifiedService().size()})</a>
                 </div>
             </li>

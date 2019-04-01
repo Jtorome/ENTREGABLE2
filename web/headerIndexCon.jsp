@@ -95,7 +95,7 @@
                     <a class="dropdown-item" href="/Entregable2/VerHistorialCon">Ver mi historial.</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Otras opciones:</h6>
-                    <a class="dropdown-item" href="IndexVerVehiculosCon.jsp">Mis vehiculos.</a>
+                    <a class="dropdown-item" href="/Entregable2/IndexVerVehiculosCon">Mis vehiculos.</a>
                     <a class="dropdown-item" href="blank.html">Blank Page</a>
                 </div>
             </li>

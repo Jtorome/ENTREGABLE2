@@ -53,18 +53,21 @@ public class CrearDatosFicticios extends HttpServlet {
             Conductor c = new Conductor("juan@unal.edu.co", "hola", "juan", "312");
             Conductor c2 = new Conductor("luis@unal.edu.co", "luis", "luis", "312");
             Vehiculo v = new Vehiculo("abc123", "rojo", "Carro", "bocho", 5, c);
+            Vehiculo v12 = new Vehiculo("def456", "azul", "Moto", "Pulsar", 2, c);
             Vehiculo v2 = new Vehiculo("afs231", "verde", "Carro", "bmw", 5, c2);
             LocalDate dateser = LocalDate.now();
-            Servicio s = new Servicio("23:59", "Volador", "Minas", "Agora", "M8", 4, c, v, dateser);
+            Servicio s = new Servicio("01:32", "Volador", "Minas", "Agora", "M8", 4, c, v, dateser);
             Servicio s2 = new Servicio("23:59", "Volador", "Rio", "Agora", "4", 4, c2, v2, dateser);
             Pasajero p = new Pasajero("juan@unal.edu.co", "hola", "juan", "312");
             DriversList.add(c);
             DriversList.add(c2);
             VehiclesList.add(v);
+            VehiclesList.add(v12);
             VehiclesList.add(v2);
             AvailableService.add(s);
             AvailableService.add(s2);
             ServicesList.add(s);
+            ServicesList.add(s2);
             RidersList.add(p);
             session.setAttribute("CrearDatosFicticios", 1);
             response.sendRedirect("/Entregable2/Start");
@@ -72,18 +75,5 @@ public class CrearDatosFicticios extends HttpServlet {
             request.setAttribute("stError", exc.getMessage());
             request.getRequestDispatcher("Start.jsp").forward(request, response);
         }
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
     }
 }
