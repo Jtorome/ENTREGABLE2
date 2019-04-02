@@ -95,6 +95,7 @@
                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="/Entregable2/VerViajeActualPas">Informacion de mi viaje.</a>
+                    <a class="dropdown-item" href="/Entregable2/VerHistorialPas">Ver mi historial.</a>
                     <a class="dropdown-item" href="Registro.jsp">Agregar Viaje</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Otras paginas</h6>

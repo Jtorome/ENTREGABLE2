@@ -28,6 +28,7 @@ public class Calificacion {
     }
 
     public void setRider(Pasajero rider) {
+        rider.setScoreListPa(this);
         this.Rider = rider;
     }
 

@@ -96,7 +96,7 @@
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Otras opciones:</h6>
                     <a class="dropdown-item" href="/Entregable2/IndexVerVehiculosCon">Mis vehiculos.</a>
-                    <a class="dropdown-item" href="blank.html">Blank Page</a>
+                    <a class="dropdown-item" href="/Entregable2/CalificarPasajeroCon">Calificar (${InfoUsuario.getUnqualifiedRider().size()})</a>
                 </div>
             </li>
 

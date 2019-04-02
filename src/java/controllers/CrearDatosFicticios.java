@@ -56,7 +56,7 @@ public class CrearDatosFicticios extends HttpServlet {
             Vehiculo v12 = new Vehiculo("def456", "azul", "Moto", "Pulsar", 2, c);
             Vehiculo v2 = new Vehiculo("afs231", "verde", "Carro", "bmw", 5, c2);
             LocalDate dateser = LocalDate.now();
-            Servicio s = new Servicio("01:32", "Volador", "Minas", "Agora", "M8", 4, c, v, dateser);
+            Servicio s = new Servicio("00:58", "Volador", "Minas", "Agora", "M8", 4, c, v, dateser);
             Servicio s2 = new Servicio("23:59", "Volador", "Rio", "Agora", "4", 4, c2, v2, dateser);
             Pasajero p = new Pasajero("juan@unal.edu.co", "hola", "juan", "312");
             DriversList.add(c);

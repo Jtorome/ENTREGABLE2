@@ -1,6 +1,6 @@
 <%-- 
-    Document   : InfoVaijePas
-    Created on : 29/03/2019, 02:56:28 PM
+    Document   : RevisarServicioPas
+    Created on : 2/04/2019, 12:40:09 AM
     Author     : juana
 --%>
 
@@ -16,11 +16,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Mi viaje actual es:
-                        <form action="EliminarServicio" method="POST">
-                            <input type="text" name="Controller" hidden="" class="fas fa-table" value="Pasajero">
-                            <input type="submit" class="fas fa-table" value="Dejar.">
-                        </form>
+                        Información sobre el viaje:
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -38,18 +34,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${InfoUsuario.getCurrentTrip()}" var="service">
-                                        <tr>
-                                            <td>${service.getMeetingTime()}</td>
-                                            <td>${service.getOutputCore()}</td>
-                                            <td>${service.getArrivalNucleus()}</td>
-                                            <td>${service.getStartPlace()}</td>
-                                            <td>${service.getEndPlace()}</td>
-                                            <td>${service.getAvailableSeats()}</td>
-                                            <td>${service.getDriver().getName()}</td>
-                                            <td>${service.getDateSer()}</td>
-                                        </tr>
-                                    </c:forEach>
+                                    <tr>
+                                        <td>${service.getMeetingTime()}</td>
+                                        <td>${service.getOutputCore()}</td>
+                                        <td>${service.getArrivalNucleus()}</td>
+                                        <td>${service.getStartPlace()}</td>
+                                        <td>${service.getEndPlace()}</td>
+                                        <td>${service.getAvailableSeats()}</td>
+                                        <td>${service.getDriver().getName()}</td>
+                                        <td>${service.getDateSer()}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -73,15 +67,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${InfoUsuario.getCurrentTrip()}" var="service">
-                                        <tr>
-                                            <td>${service.getDriver().getName()}</td>
-                                            <td>${service.getDriver().getEmail()}</td>
-                                            <td>${service.getDriver().getCellPhone()}</td>
-                                            <td>${service.getDriver().getServicesNumber()}</td>
-                                            <td>${service.getDriver().getAccumulatedRating()}</td>
-                                        </tr>
-                                    </c:forEach>
+                                    <tr>
+                                        <td>${service.getDriver().getName()}</td>
+                                        <td>${service.getDriver().getEmail()}</td>
+                                        <td>${service.getDriver().getCellPhone()}</td>
+                                        <td>${service.getDriver().getServicesNumber()}</td>
+                                        <td>${service.getDriver().getAccumulatedRating()}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -104,14 +96,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${InfoUsuario.getCurrentTrip()}" var="service">
-                                        <tr>
-                                            <td>${service.getVehicle().getLicensePlate()}</td>
-                                            <td>${service.getVehicle().getColor()}</td>
-                                            <td>${service.getVehicle().getVehicleType()}</td>
-                                            <td>${service.getVehicle().getVehiculeModel()}</td>
-                                        </tr>
-                                    </c:forEach>
+                                    <tr>
+                                        <td>${service.getVehicle().getLicensePlate()}</td>
+                                        <td>${service.getVehicle().getColor()}</td>
+                                        <td>${service.getVehicle().getVehicleType()}</td>
+                                        <td>${service.getVehicle().getVehiculeModel()}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
