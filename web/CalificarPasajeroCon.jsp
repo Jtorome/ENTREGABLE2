@@ -65,4 +65,4 @@
                 <!-- /.container-fluid -->
 
 
-                <%@ include file="footerIndexCon.jsp" %>
+                <%@ include file="footerIndex.jsp" %>

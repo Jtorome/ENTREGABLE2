@@ -117,4 +117,4 @@
                         </div>
                     </div>
                 </div>
-                <%@ include file="footerIndexPas.jsp" %>
+                <%@ include file="footerIndex.jsp" %>

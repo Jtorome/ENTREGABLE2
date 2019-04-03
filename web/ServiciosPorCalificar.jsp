@@ -80,4 +80,4 @@
                 <!-- /.container-fluid -->
 
 
-                <%@ include file="footerIndexPas.jsp" %>
+                <%@ include file="footerIndex.jsp" %>

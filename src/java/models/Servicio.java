@@ -107,6 +107,8 @@ public class Servicio {
         rider.getServiceListPa().remove(this);
         rider.getCurrentTrip().remove(this);
         int seat=(Integer) this.getRiderxSeat().get(rider);
+        this.getRiderxSeat().remove(rider);
+        this.getRidersList().remove(rider);
         this.AvailableSeats=this.AvailableSeats+seat;
     }
 }

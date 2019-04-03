@@ -31,7 +31,6 @@
                                 <th>Lugar salida</th>
                                 <th>Lugar llegada</th>
                                 <th>Asientos disponibles</th>
-                                <th>Conductor</th>
                                 <th>Fecha</th>
                             </tr>
                         </thead>
@@ -48,7 +47,6 @@
                                     <td>${service.getStartPlace()}</td>
                                     <td>${service.getEndPlace()}</td>
                                     <td>${service.getAvailableSeats()}</td>
-                                    <td>${service.getDriver().getName()}</td>
                                     <td>${service.getDateSer()}</td>
                                 </tr>
                             </c:forEach>
@@ -57,5 +55,46 @@
                 </div>
             </div>
         </div>
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                Pasajeros:
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Eliminar</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Celular</th>
+                                <th>Calificacion promedio</th>
+                                <th>Asientos tomados</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <c:forEach items="${InfoUsuario.getCurrentService().get(0).getRidersList()}" var="rider">
+                                <tr>
+                                    <td><form action="EliminarPasajeroCon" method="POST">
+                                            <input type="txt" name="txtEmail" hidden="" value="${rider.getEmail()}">
+                                            <input type="submit" class="fas fa-table" value="Eliminar">
+                                        </form></td>
+                                    <td>${rider.getName()}</td>
+                                    <td>${rider.getEmail()}</td>
+                                    <td>${rider.getCellPhone()}</td>
+                                    <td>${rider.getAverageScore()}</td>
+                                    <td>${InfoUsuario.getCurrentService().get(0).getRiderxSeat().get(rider)}</td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-        <%@ include file="footerIndexCon.jsp" %>
+        <%@ include file="footerIndex.jsp" %>

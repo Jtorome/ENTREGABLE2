@@ -41,5 +41,5 @@
             </div>
             <input name="btnRegistrarme" type="submit" class="btn btn-primary btn-block" value="Registrar vehiculo"/>
         </form>
-        <%@ include file="footerIndexCon.jsp" %>
+        <%@ include file="footerIndex.jsp" %>
 

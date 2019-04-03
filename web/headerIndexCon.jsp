@@ -99,4 +99,20 @@
                     <a class="dropdown-item" href="/Entregable2/CalificarPasajeroCon">Calificar (${InfoUsuario.getUnqualifiedRider().size()})</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="OpcionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Tops</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
+                    <h6 class="dropdown-header">Sobre servicios:</h6>
+                    <a class="dropdown-item" href="/Entregable2/ProgramarViaje">Programar viaje</a>
+                    <a class="dropdown-item" href="/Entregable2/VerViajeActualCon">Ver viaje acual.</a>
+                    <a class="dropdown-item" href="/Entregable2/VerHistorialCon">Ver mi historial.</a>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Sobre conductores:</h6>
+                    <a class="dropdown-item" href="/Entregable2/MejorCalificadosCon">Mejor calificados.</a>
+                    <a class="dropdown-item" href="/Entregable2/CalificarPasajeroCon">Calificar (${InfoUsuario.getUnqualifiedRider().size()})</a>
+                </div>
+            </li>
 

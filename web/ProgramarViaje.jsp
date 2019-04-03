@@ -71,4 +71,4 @@
             <input name="btnRegistrarme" type="submit" class="btn btn-primary btn-block" value="Programar viaje"/>
         </form>
 
-        <%@ include file="footerIndexCon.jsp" %>
+        <%@ include file="footerIndex.jsp" %>

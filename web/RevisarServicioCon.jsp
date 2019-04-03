@@ -43,4 +43,4 @@
                         </div>
                     </div>
                 </div>
-                <%@ include file="footerIndexCon.jsp" %>
+                <%@ include file="footerIndex.jsp" %>
