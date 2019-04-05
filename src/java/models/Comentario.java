@@ -43,7 +43,7 @@ public class Comentario {
 
     public static Comentario BuscadorDeComentario(String description, String email, LocalDate date, List<Comentario> CommentsList) {
         for (Comentario comment : CommentsList) {
-            if (comment.getDescription().equals(description) && comment.getPerson().getName().equals(email) && comment.getDate().equals(date)) {
+            if (comment.getDescription().equals(description) && comment.getPerson().getEmail().equals(email) && comment.getDate().equals(date)) {
                 return comment;
             }
         }
