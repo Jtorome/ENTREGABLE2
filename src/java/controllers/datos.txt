@@ -1,1 +1,4 @@
 manuekl@unal.edu.co,hola,Juan Alberto,543
+manuekl@unal.edu.co,hola,jajun,312
+manuel@unal.edu.co,hola,manuel,543
+louis@unal.edu.co,hola,manuel,543

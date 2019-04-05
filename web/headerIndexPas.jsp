@@ -72,7 +72,7 @@
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="/Entregable2/VerPerfilPas">Ver perfil</a>
                     <div class="dropdown-divider"></div>
                     <form action="LogOut" method="POST">
                         <input name="btnAceptar" type="submit" class="dropdown-item" value="Cerrar sesion"/>
@@ -96,10 +96,10 @@
                     <h6 class="dropdown-header">Sobre servicios:</h6>
                     <a class="dropdown-item" href="/Entregable2/VerViajeActualPas">Informacion de mi viaje.</a>
                     <a class="dropdown-item" href="/Entregable2/VerHistorialPas">Ver mi historial.</a>
-                    <a class="dropdown-item" href="Registro.jsp">Agregar Viaje</a>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Otras paginas</h6>
                     <a class="dropdown-item" href="/Entregable2/CalificarServicioPas">Calificar (${InfoUsuario.getUnqualifiedService().size()})</a>
+                    <a class="dropdown-item" href="/Entregable2/Comentar">Comentar</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

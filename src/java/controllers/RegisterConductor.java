@@ -5,9 +5,7 @@
  */
 package controllers;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -25,28 +23,6 @@ import models.Conductor;
  */
 @WebServlet(name = "RegisterConductor", urlPatterns = {"/RegisterConductor"})
 public class RegisterConductor extends HttpServlet {
-
-    protected void Escritura(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        String name = request.getParameter("txtName");
-        String email = request.getParameter("txtEmail").toLowerCase() + "@unal.edu.co";
-        String cellphone = request.getParameter("txtCellphone");
-        String password = request.getParameter("txtPassword");
-        FileWriter fichero=null;
-        PrintWriter pw=null;
-        try {
-            fichero = new FileWriter("C:\\Users\\juana\\Downloads\\Universidad\\unal 2018-2\\POO\\Entregable2\\src\\java\\controllers\\datos.txt");
-            pw = new PrintWriter(fichero);
-            pw.println(email+","+password+","+name+","+cellphone);
-        } catch (IOException exc) {
-
-        } finally {
-            if (null != fichero) {
-                fichero.close();
-            }
-        }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -110,7 +86,6 @@ public class RegisterConductor extends HttpServlet {
                     throw new Exception("Correo existente por favor inicie sesion.");
                 }
             }
-            Escritura(request, response);
             Conductor p = new Conductor(email, password, name, cellphone);
             DriversList.add(p);
             session.setAttribute("InfoUsuario", p);

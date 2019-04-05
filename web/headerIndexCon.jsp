@@ -51,6 +51,9 @@
         if (${empty InfoUsuario}) {
             window.location = "Login.jsp";
         }
+        if (${!empty stExito}) {
+            swal("Mensaje", "${stExito}", "success");
+        }
         if (${!empty stError}) {
             swal("Mensaje", "${stError}", "error");
         }
@@ -68,7 +71,7 @@
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
+                    <a class="dropdown-item" href="/Entregable2/VerPerfilCon">Ver perfil</a>
                     <div class="dropdown-divider"></div>
                     <form action="LogOut" method="POST">
                         <input name="btnAceptar" type="submit" class="dropdown-item" value="Cerrar sesion">
@@ -97,6 +100,7 @@
                     <h6 class="dropdown-header">Otras opciones:</h6>
                     <a class="dropdown-item" href="/Entregable2/IndexVerVehiculosCon">Mis vehiculos.</a>
                     <a class="dropdown-item" href="/Entregable2/CalificarPasajeroCon">Calificar (${InfoUsuario.getUnqualifiedRider().size()})</a>
+                    <a class="dropdown-item" href="/Entregable2/Comentar">Comentar</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -135,4 +139,3 @@
                     </form>
                 </div>
             </li>
-

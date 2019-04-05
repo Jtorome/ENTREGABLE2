@@ -1,6 +1,7 @@
 
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +11,9 @@ public class Comentario {
     
     private String Description;
     private Persona Person;
-    private String Date;
+    private LocalDate Date;
     
-    public Comentario(String description, Persona person, String date){
+    public Comentario(String description, Persona person, LocalDate date){
         this.setDescription(description);
         this.setPerson(person);
         this.setDate(date);
@@ -20,10 +21,10 @@ public class Comentario {
     
     public void setDescription(String description){this.Description=description;}
     public void setPerson(Persona person){this.Person=person;}
-    public void setDate(String date){this.Date=date;}
+    public void setDate(LocalDate date){this.Date=date;}
     
     public String getDescription(){return this.Description;}
     public Persona getPerson(){return this.Person;}
-    public String getDate(){return this.Date;}
+    public LocalDate getDate(){return this.Date;}
     
 }
