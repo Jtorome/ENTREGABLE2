@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ListaConductores
-    Created on : 5/04/2019, 12:28:42 AM
+    Document   : ListaComentarios
+    Created on : 5/04/2019, 01:51:41 AM
     Author     : juana
 --%>
 
@@ -17,7 +17,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Lista conductores
+                        Lista de comentarios
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -25,35 +25,31 @@
                                 <thead>
                                     <tr>
                                         <th>Eliminar</th>
+                                        <th>Fecha</th>
                                         <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Celular</th>
-                                        <th>Numero de viajes</th>
-                                        <th>Acumulado de calificaciones</th>
+                                        <th>Descripcion</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
                                         <th>Eliminar</th>
+                                        <th>Fecha</th>
                                         <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Celular</th>
-                                        <th>Numero de viajes</th>
-                                        <th>Acumulado de calificaciones</th>
+                                        <th>Descripcion</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <c:forEach items="${DriversList}" var="driver">
+                                    <c:forEach items="${CommentsList}" var="comment">
                                         <tr>
-                                            <td><form action="EliminarConductor" method="POST">
-                                                    <input type="txt" name="txtEmail" hidden="" value="${driver.getEmail()}">
+                                            <td><form action="EliminarComentario" method="POST">
+                                                    <input type="txt" name="txtEmail" hidden="" value="${comment.getPerson().getEmail()}">
+                                                    <input type="txt" name="txtDate" hidden="" value="${comment.getDate()}">
+                                                    <input type="txt" name="txtDes" hidden="" value="${comment.getDescription()}">
                                                     <input type="submit" class="fas fa-table" value="Eliminar">
                                                 </form></td>
-                                            <td>${driver.getName()}</td>
-                                            <td>${driver.getEmail()}</td>
-                                            <td>${driver.getCellPhone()}</td>
-                                            <td>${driver.getServiceListDri().size()}</td>
-                                            <td>${driver.getAccumulatedRating()}</td>
+                                            <td>${comment.getDate()}</td>
+                                            <td>${comment.getPerson().getName()}</td>
+                                            <td>${comment.getDescription()}</td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
@@ -62,4 +58,6 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+
+
                 <%@ include file="footerIndex.jsp" %>

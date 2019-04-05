@@ -7,21 +7,24 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import models.Conductor;
 
 /**
  *
  * @author juana
  */
-@WebServlet(name = "ListaConductores", urlPatterns = {"/ListaConductores"})
-public class ListaConductores extends HttpServlet {
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+@WebServlet(name = "EliminarConductor", urlPatterns = {"/EliminarConductor"})
+public class EliminarConductor extends HttpServlet {
+
     /**
-     * Handles the HTTP <code>GET</code> method.
+     * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -29,9 +32,14 @@ public class ListaConductores extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        HttpSession session = request.getSession();
+        List<Conductor> DriversList=(List<Conductor>) session.getAttribute("DriversList");
+        Conductor driver=Conductor.BuscadorDeConductor(request.getParameter("txtEmail"), DriversList);
+        DriversList.remove(driver);
+        session.setAttribute("DriversList", DriversList);
         request.getRequestDispatcher("ListaConductores.jsp").forward(request, response);
     }
 }

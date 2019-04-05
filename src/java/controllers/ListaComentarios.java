@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author juana
  */
-@WebServlet(name = "ListaConductores", urlPatterns = {"/ListaConductores"})
-public class ListaConductores extends HttpServlet {
+@WebServlet(name = "ListaComentarios", urlPatterns = {"/ListaComentarios"})
+public class ListaComentarios extends HttpServlet {
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -32,6 +32,6 @@ public class ListaConductores extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        request.getRequestDispatcher("ListaConductores.jsp").forward(request, response);
+        request.getRequestDispatcher("ListaComentarios.jsp").forward(request, response);
     }
 }

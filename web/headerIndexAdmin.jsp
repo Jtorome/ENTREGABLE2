@@ -48,9 +48,6 @@
 </head>
 <body id="page-top">
     <script type="text/javascript">
-        if (${empty InfoUsuario}) {
-            window.location = "Login.jsp";
-        }
         if (${!empty stExito}) {
             swal("Mensaje", "${stExito}", "success");
         }
@@ -92,8 +89,9 @@
                 <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
                     <h6 class="dropdown-header">Sobre pagina</h6>
                     <a class="dropdown-item" href="/Entregable2/ListaConductores">Lista Conductores</a>
-                    <a class="dropdown-item" href="/Entregable2/VerViajeActualCon">Ver viaje acual.</a>
-                    <a class="dropdown-item" href="/Entregable2/VerHistorialCon">Ver mi historial.</a>
+                    <a class="dropdown-item" href="/Entregable2/ListaPasajeros">Lista Pasajeros</a>
+                    <a class="dropdown-item" href="/Entregable2/ListaTodosServicios">Todos los servicios</a>
+                    <a class="dropdown-item" href="/Entregable2/ListaComentarios">Lista Comentarios</a>
                 </div>
             </li>
             

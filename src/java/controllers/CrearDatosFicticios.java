@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import models.Calificacion;
+import models.Comentario;
 import models.Conductor;
 import models.Pasajero;
 import models.Servicio;
@@ -51,6 +52,7 @@ public class CrearDatosFicticios extends HttpServlet {
             List<Servicio> ServicesList = (List<Servicio>) session.getAttribute("ServicesList");
             List<Servicio> AvailableService = (List<Servicio>) session.getAttribute("AvailableService");
             List<Pasajero> RidersList = (List<Pasajero>) session.getAttribute("RidersList");
+            List<Comentario> CommentsList= (List<Comentario>) session.getAttribute("CommentsList");
             Conductor c = new Conductor("juan@unal.edu.co", "hola", "juan", "312");
             Conductor c2 = new Conductor("luis@unal.edu.co", "luis", "luis", "312");
             Conductor c3 = new Conductor("manuel@unal.edu.co", "manuel", "manuel", "2443");
@@ -63,6 +65,7 @@ public class CrearDatosFicticios extends HttpServlet {
             Servicio s2 = new Servicio("23:59", "Volador", "Rio", "Agora", "4", 4, c2, v2, dateser);
             Servicio s3 = new Servicio("00:01", "Volador", "Minas", "Agora", "M8", 4, c3, v3, dateser);
             Pasajero p = new Pasajero("juan@unal.edu.co", "hola", "juan", "312");
+            Comentario comment=new Comentario("Muy buen pag", p, dateser);
             s.setRidersList(p, 1);
             new Calificacion(4, "bonito", s);
             new Calificacion(3, "regular", p);
@@ -80,6 +83,7 @@ public class CrearDatosFicticios extends HttpServlet {
             ServicesList.add(s2);
             ServicesList.add(s3);
             RidersList.add(p);
+            CommentsList.add(comment);
             session.setAttribute("CrearDatosFicticios", 1);
             response.sendRedirect("/Entregable2/Start");
         } catch (Exception exc) {

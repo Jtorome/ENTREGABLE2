@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ListaConductores
-    Created on : 5/04/2019, 12:28:42 AM
+    Document   : ListaPasajeros
+    Created on : 5/04/2019, 01:29:48 AM
     Author     : juana
 --%>
 
@@ -29,7 +29,7 @@
                                         <th>Correo</th>
                                         <th>Celular</th>
                                         <th>Numero de viajes</th>
-                                        <th>Acumulado de calificaciones</th>
+                                        <th>Promedio de calificaciones</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -39,21 +39,21 @@
                                         <th>Correo</th>
                                         <th>Celular</th>
                                         <th>Numero de viajes</th>
-                                        <th>Acumulado de calificaciones</th>
+                                        <th>Promedio de calificaciones</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <c:forEach items="${DriversList}" var="driver">
+                                    <c:forEach items="${RidersList}" var="rider">
                                         <tr>
-                                            <td><form action="EliminarConductor" method="POST">
-                                                    <input type="txt" name="txtEmail" hidden="" value="${driver.getEmail()}">
+                                            <td><form action="EliminarPasajeroAdmin" method="POST">
+                                                    <input type="txt" name="txtEmail" hidden="" value="${rider.getEmail()}">
                                                     <input type="submit" class="fas fa-table" value="Eliminar">
                                                 </form></td>
-                                            <td>${driver.getName()}</td>
-                                            <td>${driver.getEmail()}</td>
-                                            <td>${driver.getCellPhone()}</td>
-                                            <td>${driver.getServiceListDri().size()}</td>
-                                            <td>${driver.getAccumulatedRating()}</td>
+                                            <td>${rider.getName()}</td>
+                                            <td>${rider.getEmail()}</td>
+                                            <td>${rider.getCellPhone()}</td>
+                                            <td>${rider.getServiceListPa().size()}</td>
+                                            <td>${driver.getAverageScore()}</td>
                                         </tr>
                                     </c:forEach>
                                 </tbody>
