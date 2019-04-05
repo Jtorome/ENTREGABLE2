@@ -35,7 +35,7 @@ public class Vehiculo {
     public String getLicensePlate() {return this.LicensePlate;}
     public String getColor() {return this.Color;}
     public String getVehicleType() {return this.VehicleType;}
-    public String getVehiculeModel() {return this.VehiculeModel;}
+    public String getVehicleModel() {return this.VehiculeModel;}
     public int getSeats() {return this.Seats;}
     public Conductor getDriver() {return this.Driver;}
 }

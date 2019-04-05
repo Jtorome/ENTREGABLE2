@@ -180,8 +180,8 @@ public class ProgramarViaje extends HttpServlet {
 
             session.setAttribute("ServicesList", ServicesList);
             session.setAttribute("AvailableService", AvailableService);
-            response.sendRedirect("/Entregable2/IndexConductor");
-            //request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
+            //response.sendRedirect("/Entregable2/IndexConductor");
+            request.getRequestDispatcher("IndexConductor.jsp").forward(request, response);
         } catch (ArithmeticException exce) {
             request.setAttribute("stError", exce.getMessage());
             response.sendRedirect("/Entregable2/IndexConductor");

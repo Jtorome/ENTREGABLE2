@@ -102,3 +102,39 @@
                     <a class="dropdown-item" href="/Entregable2/CalificarServicioPas">Calificar (${InfoUsuario.getUnqualifiedService().size()})</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="OpcionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Tops</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
+                    <h6 class="dropdown-header">Sobre servicios:</h6>
+                    <form action="RutaFavorita" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="Ruta favorita.">
+                    </form>
+                    <form action="HoraMasConcurrida" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="hora favorita.">
+                    </form>
+                    <form action="VehiculoFavorito" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="Vehiculo favorito.">
+                    </form>
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Sobre conductores:</h6>
+                    <form action="MejorConductores" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="Mejor calificados.">
+                    </form>
+                    <form action="MasViajesConductor" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="Mas viajes hechos.">
+                    </form>
+                    <h6 class="dropdown-header">Sobre Pasajeros:</h6>
+                    <form action="MejorPasajeros" method="POST">
+                        <input type="text" name="cual" hidden="" value="Pasajero">
+                        <input type="submit" class="dropdown-item" value="Mejor calificados.">
+                    </form>
+                </div>
+            </li>

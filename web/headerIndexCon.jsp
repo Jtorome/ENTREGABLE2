@@ -56,11 +56,11 @@
         }
     </script>
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-        <a class="navbar-brand mr-1" href="IndexConductor.jsp">S.T.A.I.N</a>
+        <a class="navbar-brand mr-1" href="/Entregable2/IndexConductor">S.T.A.I.N</a>
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button>
-        <a class="navbar-brand mr-1" href="IndexConductor.jsp">CONDUCTOR</a>
+        <a class="navbar-brand mr-1" href="/Entregable2/IndexConductor">CONDUCTOR</a>
         <i class="fa fa-2x fa-car "></i>
         <ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <li class="nav-item dropdown no-arrow">
@@ -106,13 +106,33 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
                     <h6 class="dropdown-header">Sobre servicios:</h6>
-                    <a class="dropdown-item" href="/Entregable2/ProgramarViaje">Programar viaje</a>
-                    <a class="dropdown-item" href="/Entregable2/VerViajeActualCon">Ver viaje acual.</a>
-                    <a class="dropdown-item" href="/Entregable2/VerHistorialCon">Ver mi historial.</a>
+                    <form action="RutaFavorita" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="Ruta Favorita.">
+                    </form>
+                    <form action="HoraMasConcurrida" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="hora favorita.">
+                    </form>
+                    <form action="VehiculoFavorito" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="Vehiculo favorito.">
+                    </form>
                     <div class="dropdown-divider"></div>
                     <h6 class="dropdown-header">Sobre conductores:</h6>
-                    <a class="dropdown-item" href="/Entregable2/MejorCalificadosCon">Mejor calificados.</a>
-                    <a class="dropdown-item" href="/Entregable2/CalificarPasajeroCon">Calificar (${InfoUsuario.getUnqualifiedRider().size()})</a>
+                    <form action="MejorConductores" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="Mejor calificados.">
+                    </form>
+                    <form action="MasViajesConductor" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="Mas viajes hechos.">
+                    </form>
+                    <h6 class="dropdown-header">Sobre Pasajeros:</h6>
+                    <form action="MejorPasajeros" method="POST">
+                        <input type="text" name="cual" hidden="" value="Conductor">
+                        <input type="submit" class="dropdown-item" value="Mejor calificados.">
+                    </form>
                 </div>
             </li>
 

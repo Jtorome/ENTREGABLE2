@@ -21,9 +21,8 @@ import models.Conductor;
  *
  * @author juana
  */
-@WebServlet(name = "MejorCalificadosCon", urlPatterns = {"/MejorCalificadosCon"})
-public class MejorCalificadosCon extends HttpServlet {
-
+@WebServlet(name = "MasViajesConductor", urlPatterns = {"/MasViajesConductor"})
+public class MasViajesConductor extends HttpServlet {
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -36,27 +35,37 @@ public class MejorCalificadosCon extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
         HttpSession session = request.getSession();
         List<Conductor> DriversList = (List<Conductor>) session.getAttribute("DriversList");
-        List<Float> AccumulatedRating = new ArrayList<Float>();
+        List<Integer> ServicesNumber = new ArrayList<Integer>();
         List<Conductor> Drivers = new ArrayList<Conductor>();
-        List<Conductor> BestDrivers = new ArrayList<Conductor>();
+        List<Conductor> Mayor = new ArrayList<Conductor>();
         for (Conductor driver : DriversList) {
-            AccumulatedRating.add(driver.getAccumulatedRating());
+            ServicesNumber.add(driver.getServicesNumber());
             Drivers.add(driver);
         }
         for (int j = 0; j < 3; j++) {
-            if (AccumulatedRating.isEmpty()) {
+            if (ServicesNumber.isEmpty()) {
                 break;
             }
-            Float mayor = (float) AccumulatedRating.stream().mapToDouble(i -> i).max().getAsDouble();
-            int posicion = AccumulatedRating.indexOf(mayor);
-            BestDrivers.add(Drivers.get(posicion));
-            AccumulatedRating.remove(mayor);
+            int mayor = (int) ServicesNumber.stream().mapToDouble(i -> i).max().getAsDouble();
+            int posicion = ServicesNumber.indexOf(mayor);
+            Mayor.add(Drivers.get(posicion));
+            ServicesNumber.remove(posicion);
             Drivers.remove(Drivers.get(posicion));
         }
-        request.setAttribute("BestDrivers", BestDrivers);
-        request.getRequestDispatcher("MejorCalificadosCon.jsp").forward(request, response);
+        request.setAttribute("Mayor", Mayor);
+        if (request.getParameter("cual").equals("Conductor")) {
+            request.getRequestDispatcher("MasViajesConducCon.jsp").forward(request, response);
+        }
+        else if (request.getParameter("cual").equals("Pasajero")) {
+            request.getRequestDispatcher("MasViajesConducPas.jsp").forward(request, response);
+        }
     }
 }

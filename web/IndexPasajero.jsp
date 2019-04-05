@@ -14,7 +14,6 @@
     <div class="container-fluid">
         <div id="content-wrapper">
             <div class="container-fluid">
-                <form action="IndexPasajero" method="GET"><input type="submit" hidden=""></form>
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
