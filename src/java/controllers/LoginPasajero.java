@@ -67,6 +67,22 @@ public class LoginPasajero extends HttpServlet {
                 throw new Exception(stMensaje.substring(0, stMensaje.length() - 2) + ".");
             }
             HttpSession session = request.getSession();
+            if (request.getParameter("txtEmail").equals("jtorom@unal.edu.co.admin") && request.getParameter("txtPassword").equals("admin1")){
+                session.setAttribute("InfoUsuario", "Juan Toro");
+                request.getRequestDispatcher("IndexAdmin.jsp").forward(request, response);
+            }
+            else if (request.getParameter("txtEmail").equals("cabrera@unal.edu.co.admin") && request.getParameter("txtPassword").equals("admin2")){
+                session.setAttribute("InfoUsuario", "Sergio Cabrera");
+                request.getRequestDispatcher("IndexAdmin.jsp").forward(request, response);
+            }
+            else if (request.getParameter("txtEmail").equals("eduar@unal.edu.co.admin") && request.getParameter("txtPassword").equals("admin3")){
+                session.setAttribute("InfoUsuario", "Eduardo Santos");
+                request.getRequestDispatcher("IndexAdmin.jsp").forward(request, response);
+            }
+            else if (request.getParameter("txtEmail").equals("david@unal.edu.co.admin") && request.getParameter("txtPassword").equals("admin4")){
+                session.setAttribute("InfoUsuario", "Juan David");
+                request.getRequestDispatcher("IndexAdmin.jsp").forward(request, response);
+            }
             List<Pasajero> RidersList = new ArrayList<Pasajero>();
             if (null != session.getAttribute("RidersList")) {
                 RidersList = (List<Pasajero>) session.getAttribute("RidersList");

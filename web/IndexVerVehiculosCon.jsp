@@ -14,10 +14,6 @@
     <div class="dropdown-menu" aria-labelledby="OpcionDropdown">
         <h6 class="dropdown-header">Sobre vehiculos:</h6>
         <a class="dropdown-item" href="IndexAddVehiCon.jsp">Registrar vehiculo.</a>
-        <div class="dropdown-divider"></div>
-        <h6 class="dropdown-header">Other Pages:</h6>
-        <a class="dropdown-item" href="404.html">404 Page</a>
-        <a class="dropdown-item" href="blank.html">Blank Page</a>
     </div>
 </li>
 </ul>
@@ -58,7 +54,7 @@
                                     <td>${vehi.getLicensePlate()}</td>
                                     <td>${vehi.getColor()}</td>
                                     <td>${vehi.getVehicleType()}</td>
-                                    <td>${vehi.getVehiculeModel()}</td>
+                                    <td>${vehi.getVehicleModel()}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>

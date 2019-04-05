@@ -78,19 +78,21 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <c:forEach items="${InfoUsuario.getCurrentService().get(0).getRidersList()}" var="rider">
-                                <tr>
-                                    <td><form action="EliminarPasajeroCon" method="POST">
-                                            <input type="txt" name="txtEmail" hidden="" value="${rider.getEmail()}">
-                                            <input type="submit" class="fas fa-table" value="Eliminar">
-                                        </form></td>
-                                    <td>${rider.getName()}</td>
-                                    <td>${rider.getEmail()}</td>
-                                    <td>${rider.getCellPhone()}</td>
-                                    <td>${rider.getAverageScore()}</td>
-                                    <td>${InfoUsuario.getCurrentService().get(0).getRiderxSeat().get(rider)}</td>
-                                </tr>
-                            </c:forEach>
+                            <c:if test="${!InfoUsuario.getCurrentService().isEmpty()}">
+                                <c:forEach items="${InfoUsuario.getCurrentService().get(0).getRidersList()}" var="rider">
+                                    <tr>
+                                        <td><form action="EliminarPasajeroCon" method="POST">
+                                                <input type="txt" name="txtEmail" hidden="" value="${rider.getEmail()}">
+                                                <input type="submit" class="fas fa-table" value="Eliminar">
+                                            </form></td>
+                                        <td>${rider.getName()}</td>
+                                        <td>${rider.getEmail()}</td>
+                                        <td>${rider.getCellPhone()}</td>
+                                        <td>${rider.getAverageScore()}</td>
+                                        <td>${InfoUsuario.getCurrentService().get(0).getRiderxSeat().get(rider)}</td>
+                                    </tr>
+                                </c:forEach>
+                            </c:if>
                         </tbody>
                     </table>
                 </div>
